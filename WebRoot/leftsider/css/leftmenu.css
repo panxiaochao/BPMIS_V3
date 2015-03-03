@@ -1,0 +1,111 @@
+
+/********************************      Sidebar      ********************************/
+
+#sidebar {
+	width: 206px;
+	color: #888;
+	font-size: 11px;
+	
+}
+#sidebar #sidebar-wrapper {
+	margin: 0 0 0 0px;
+}
+#sidebar a, #sidebar a:active {
+	color:#ccc;
+}
+#sidebar a:hover {
+	color:#fff;
+}
+#sidebar #sidebar-title {
+	margin: 40px 0 40px 15px;
+}
+#sidebar #logo {
+	margin: 40px 0 40px 0;
+}
+#sidebar #profile-links {
+	padding: 0 15px 20px 15px;
+	text-align: right;
+	line-height: 1.5em;
+}
+/************ Sidebar Accordion Menu ************/
+
+#sidebar #main-nav {
+	width: 206px;
+	padding: 0;
+	margin: 0 0 0 0px;
+	font-family: Helvetica, Arial, sans-serif;
+}
+#sidebar #main-nav li {
+	list-style: none;
+	padding-bottom: 5px;
+	text-align: left;
+}
+#sidebar #main-nav li a.nav-top-item {
+	background: transparent url('../images/bg-menu.png') right center no-repeat; /* Background image for default color scheme - green */
+	padding: 10px 15px;
+	color: #fff;
+	font-size: 14px;
+	cursor: pointer;
+	display: block;
+	text-decoration: none;
+	
+}
+#sidebar #main-nav li a.current {
+	background-image: url('../images/bg-menu-item-green.png') !important;
+	color: #fff;
+	font-weight: bold;
+}
+#sidebar #main-nav li a.current:hover {
+	color: #333;
+}
+#sidebar #main-nav ul {
+	padding: 0;
+	font-size: 12px;
+	margin: 0;
+}
+#sidebar #main-nav ul li {
+	list-style: none;
+	margin: 0;
+	text-align: left;
+	padding: 0;
+}
+#sidebar #main-nav ul li cite {
+	display: block;
+	float: left;
+	margin-left: 12px;
+	background: url(../images/list.gif) no-repeat;
+	width: 16px;
+	height: 16px;
+	margin-top: 7px;
+}
+#sidebar #main-nav ul li a {
+	padding: 8px 15px;
+	display: block;
+	color: #272A30;
+	font-size: 13px;
+	line-height: 1.2em;
+}
+#sidebar #main-nav ul li a:hover{
+	color: #00a4ac;
+}
+
+#sidebar #main-nav ul li.nav_active{
+	position: relative;
+}
+#sidebar #main-nav ul li.nav_active a.current{
+	background: transparent url('../images/li-bg-current.png') no-repeat !important;
+	color: #fff;
+}
+#sidebar #main-nav ul li.nav_active a.current:hover {
+	color: #fff;
+}
+#sidebar #main-nav ul li.nav_active i {
+	display: block;
+	background: url(../images/menu-current-arrow.gif) no-repeat;
+	width: 5px;
+	height: 10px;
+	position: absolute;
+	right: 0;
+	z-index: 10000;
+	top: 10px;
+}

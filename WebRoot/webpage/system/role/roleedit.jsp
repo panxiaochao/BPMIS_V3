@@ -1,0 +1,76 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@include file="/context/mytags.jsp"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base href="<c:out value="${webRoot}" />">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/select.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/select-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.ajaxCall.js"></script>
+<script type="text/javascript">
+var submitForm = function($dialog, $grid, $pjq) {
+	var url = "role/update.do";		
+	//alert($("#submitform").serialize());
+	_ajaxCall.post(url, $("#submitform").serialize(), function(data){				
+		if(data.success){
+			$pjq.messager.alert('提示', data.msg, 'info');
+			$grid.datagrid('load');
+			$dialog.dialog('destroy');
+		}else{
+			$pjq.messager.alert('提示', data.msg, 'error');
+			$dialog.dialog('destroy');
+		}			
+	}, "json", false, {});
+	
+};	
+$(document).ready(function(e) {
+	var clientHeight = document.documentElement.clientHeight;
+	$(".formborder").css("min-height",clientHeight - 68);
+	$(".noresize").css("resize","none");
+});
+</script>
+<style>
+* {
+	border:0;
+	margin:0;
+	padding:0;
+}
+body {
+	min-width:0;
+}
+</style>
+</head>
+
+<body>
+<div class="place"> <span>位置：</span>
+  <ul class="placeul">
+    <li>编辑用户</li>
+  </ul>
+</div>
+<!--header-->
+<div class="formbody formborder" >
+  <form method="post" name="submitform" id="submitform">
+    <input type="hidden" name="id" value="${requestScope.pojo.id}" />
+    <ul class="forminfo" style="padding-left:0;">
+      <li>
+        <label>角色名字<b>*</b></label>
+        <input name="roleName" type="text" class="dfinput" value="${requestScope.pojo.roleName}"  style="width:300px;"/>
+      </li>
+      <li>
+        <label>角色编码<b>*</b></label>
+        <input name="roleCode" type="text" class="dfinput" value="${requestScope.pojo.roleCode}"  style="width:300px;"/>
+      </li>
+      <li>
+        <label>备注<b>*</b></label>
+        <textarea  name="remark" class="dfborder noresize"  style="width:300px;height:150px;">${requestScope.pojo.remark}</textarea>
+      </li>
+    </ul>
+  </form>
+</div>
+</body>
+</html>

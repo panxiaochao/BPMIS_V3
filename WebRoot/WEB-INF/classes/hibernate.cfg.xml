@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<property name="connection.url">jdbc:sqlserver://localhost:1433;databaseName=Bpmis</property>
+		<property name="connection.username">sa</property>
+		<property name="connection.password">123456</property>
+		<property name="dialect">org.hibernate.dialect.SQLServerDialect</property>		
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+		<property name="format_sql">false</property>
+		<property name="jdbc.fetch_size">50</property>        
+        <property name="jdbc.batch_size">20</property>
+		<property name="jdbc.use_scrollable_resultset">false</property>
+		
+		
+		<!--  
+		<mapping class="bpmis.pxc.system.pojo.TBUser"/>
+		<mapping class="bpmis.pxc.system.pojo.Role"/>
+		<mapping class="bpmis.pxc.system.pojo.ICons"/>-->
+	</session-factory>
+
+</hibernate-configuration>
